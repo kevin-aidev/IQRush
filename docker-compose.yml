@@ -1,0 +1,18 @@
+# Run batch inference with data mounted at ./data
+# Usage: put Reviews.csv (or your CSV) in ./data, then:
+#   docker compose run --rm pipeline
+# Output: ./data/output_predictions.csv
+services:
+    pipeline:
+        build: .
+        volumes:
+            - ./data:/data
+        environment:
+            - INPUT_PATH=Reviews.csv
+            - OUTPUT_PATH=output_predictions.csv
+            - BATCH_SIZE=32
+            - LOG_LEVEL=INFO
+        # Optional: expose metrics and keep container up to scrape
+        # command: ["--input", "/data/Reviews.csv", "--output", "/data/output_predictions.csv", "--metrics"]
+        # ports:
+        #   - "9090:9090"
