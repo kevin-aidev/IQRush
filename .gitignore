@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Data (keep repo CSVs; ignore large outputs)
+output_predictions.csv
+data/*.csv
+!data/.gitkeep
+
+*.csv
+
+# Env
+.env
+.env.local
